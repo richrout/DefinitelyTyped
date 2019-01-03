@@ -1220,3 +1220,10 @@ knex('characters')
         knex('characters').select().where({ name: 'Foo', class: 'Druid' }),
         knex('characters').select().where({ name: 'Baz', class: 'Paladin' })
     );
+
+knex('users')
+    .select({
+        name: 'users.name',
+        class: knex.raw('select class from characters'),
+        sub_class: knex.from('characters').select('class').first()
+    });

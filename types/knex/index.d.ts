@@ -6,6 +6,7 @@
 //                 Satana Charuwichitratana <https://github.com/micksatana>
 //                 Shrey Jain <https://github.com/shreyjain1994>
 //                 Joel Shepherd <https://github.com/joelshepherd>
+//                 Richard Rout <https://github.com/richrout>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.8
 
@@ -178,7 +179,7 @@ declare namespace Knex {
     }
 
     interface Select extends ColumnNameQueryBuilder {
-        (aliases: { [alias: string]: string }): QueryBuilder;
+        (aliases: { [alias: string]: ColumnName }): QueryBuilder;
     }
 
     interface Table {
